@@ -1,39 +1,65 @@
 # Metronome App
 
-Metrónomo para Android desenvolvido com foco em precisão e UI baseada em componentes físicos.
+Android metronome built with a focus on precision and a UI based on physical components.
 
-## Tecnologias
-* **Kotlin** + **Jetpack Compose**
-* **Coroutines** (Temporização de alta precisão em nanossegundos)
-* **SoundPool** (Áudio de baixa latência)
-* **SplashScreen API** (Splash screen nativa do Android 12+)
+![App icon](docs/icon.png)
+![App screenshot](docs/screenshot.png)
 
-## Funcionalidades
-* **Motor de áudio auto-corretivo**: Garante BPM constante mesmo com oscilações de performance do sistema.
-* **Pêndulo interativo**: Arrastar o peso na haste ajusta o BPM seguindo a escala clássica.
-* **Controlo duplo**: Slider linear (precisão de 1 BPM) e pêndulo (escala clássica).
-* **Temas**: Suporte completo para modo escuro e claro.
+## Features
 
-## Como configurar e correr
-1. Abrir no Android Studio (Koala+).
-2. Sincronizar o Gradle.
-3. Executar em dispositivo com API 24+.
+* **Self-correcting audio engine**: keeps BPM steady even with system performance fluctuations.
+* **Interactive pendulum**: dragging the weight along the rod adjusts BPM following the classic scale.
+* **Dual control**: linear slider (1 BPM precision) and pendulum (classic scale).
+* **Themes**: full support for dark and light mode.
+## Tech stack
 
-## Como gerar APK
-No terminal:
+* Kotlin + Jetpack Compose
+* Coroutines
+* SoundPool
+* SplashScreen API
+## Requirements
+
+* Android Studio Koala or newer
+* JDK 17+
+* Device/emulator with API 24+
+## Setup and run
+
+1. Open the project in Android Studio (Koala+).
+2. Sync Gradle.
+3. Run on a device with API 24+.
+## Building the APK
+
 ```bash
 ./gradlew :app:assembleDebug
 ```
-Localização do ficheiro: `app/build/outputs/apk/debug/app-debug.apk`
 
-## Personalização de Sons
-Para usar sons próprios, colocar ficheiros `.wav` em `app/src/main/res/raw/`:
-* `primary_click.wav` - 1ª batida do compasso.
-* `intermediate_click.wav` - Batidas acentuadas pelo utilizador.
-* `normal_click.wav` - Batidas padrão.
+Output location: `app/build/outputs/apk/debug/app-debug.apk`
 
-## Especificações de Design
-* **Grelha**: Base de 8dp.
-* **Margens laterais**: 24dp.
-* **Espaçamento entre blocos**: 24dp.
-* **Cores**: Definidas em `ui/theme/Color.kt`.
+For a signed release build: `./gradlew :app:assembleRelease` (requires `signingConfig` set up in `build.gradle`).
+
+## Custom sounds
+
+To use your own sounds, place `.wav` files in `app/src/main/res/raw/`:
+
+* `primary_click.wav` — first beat of the measure.
+* `intermediate_click.wav` — user-accented beats.
+* `normal_click.wav` — regular beats.
+## Design specs
+
+* **Grid**: 8dp base.
+* **Side margins**: 24dp.
+* **Spacing between blocks**: 24dp.
+* **Colors**: defined in `ui/theme/Color.kt`.
+## Project structure
+
+```text
+app/src/main/java/com/metronome/app/
+├── MainActivity.kt         # Entry point
+├── MetronomeScreen.kt      # Main UI and animation logic
+├── MetronomeEngine.kt      # High-precision audio engine
+├── Tempo.kt                # BPM to tempo name mapping
+├── Constants.kt            # Shared constants (BPM steps, swing degrees)
+├── components/             # Reusable UI components (Pendulum, Sliders, etc.)
+├── models/                 # Data models (TimeSignature)
+└── ui/theme/               # Design system (Colors, Type, Theme)
+```
