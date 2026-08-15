@@ -1,9 +1,9 @@
-# <img src="docs/icon.png" width="32" style="border-radius: 22%; vertical-align: middle; margin-bottom: 4px;"> Metronome App
+# <img src="docs/icon.png" width="32" style="vertical-align: middle; margin-bottom: 4px;"> Metronome App
 
 Android metronome built with a focus on precision and a UI based on physical components.
 
 <p align="center">
-  <img src="docs/screenshot.png" width="220" style="border-radius: 40px;" />
+  <img src="docs/screenshot.png" width="220" />
 </p>
 
 ## Features
