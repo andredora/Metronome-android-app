@@ -2,8 +2,10 @@
 
 Android metronome built with a focus on precision and a UI based on physical components.
 
-![App icon](docs/icon.png)
-![App screenshot](docs/screenshot.png)
+<p align="center">
+  <img src="docs/icon.png" width="120" style="border-radius: 10%; margin-right: 20px;" />
+  <img src="docs/screenshot.png" width="220" style="border-radius: 5%;" />
+</p>
 
 ## Features
 
