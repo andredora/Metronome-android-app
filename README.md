@@ -1,4 +1,4 @@
-# <img src="docs/icon.png" width="32" style="vertical-align: middle; "> Metronome App
+# <img src="docs/icon.png" width="25" > Metronome App
 
 Android metronome built with a focus on precision and a UI based on physical components.
 
@@ -38,19 +38,6 @@ Output location: `app/build/outputs/apk/debug/app-debug.apk`
 
 For a signed release build: `./gradlew :app:assembleRelease` (requires `signingConfig` set up in `build.gradle`).
 
-## Custom sounds
-
-To use your own sounds, place `.wav` files in `app/src/main/res/raw/`:
-
-* `primary_click.wav` — first beat of the measure.
-* `intermediate_click.wav` — user-accented beats.
-* `normal_click.wav` — regular beats.
-## Design specs
-
-* **Grid**: 8dp base.
-* **Side margins**: 24dp.
-* **Spacing between blocks**: 24dp.
-* **Colors**: defined in `ui/theme/Color.kt`.
 ## Project structure
 
 ```text
